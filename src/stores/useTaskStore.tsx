@@ -15,7 +15,7 @@ const useTaskStore = create<TaskStore>(
       partial: Partial<TaskStore> | ((state: TaskStore) => Partial<TaskStore>)
     ) => void
   ) => ({
-    tasks: JSON.parse(localStorage?.getItem("tasks") || "[]") || [],
+    tasks: typeof window !== "undefined" ? JSON.parse(localStorage.getItem("tasks") || "[]") : [],
     setTasks: (tasks: Task[]) => {
       set({ tasks });
       localStorage.setItem("tasks", JSON.stringify(tasks));
