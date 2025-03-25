@@ -17,7 +17,7 @@ const AddTaskForm = () => {
     <form onSubmit={handleSubmit} className="mb-4 flex shadow-md">
       <input
         type="text"
-        className="flex-1 p-2 border rounded-l focus:outline-none"
+        className="flex-1 p-2 border rounded-l focus:outline-none text-black"
         placeholder="Add a new task"
         value={title}
         onChange={(e) => setTitle(e.target.value)}
